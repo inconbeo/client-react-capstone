@@ -1,0 +1,52 @@
+.container {
+    width: 100%;
+    margin: 5% auto;
+    text-align: center;
+  }
+  
+  li {
+    list-style: none;
+    color: white;
+    font-weight: 700px;
+  }
+  
+  .items-list {
+    background-color: #d91515;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .items ul {
+    background-color: orange;
+    padding: 0;
+  }
+  
+  .items-list li {
+    background-color: orange;
+    text-align: center;
+    display: inline-block;
+    margin: 0%;
+    cursor: pointer;
+    max-width: 80%;
+  }
+  
+  .items-list:hover {
+    transform: scale(1.05);
+  }
+  
+  h1, .login-form, .home {
+      text-align: center;
+  }
+
+  .logout {
+      position: absolute;
+      right: 10px;
+      top: 20px;
+      border: 1px solid black;
+      border-radius: 5px;
+  }
+
+  
+  
+  
