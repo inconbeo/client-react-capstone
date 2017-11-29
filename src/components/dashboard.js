@@ -10,15 +10,10 @@ export class Dashboard extends React.Component {
     componentWillReceiveProps(nextProps) {
       if(this.props.loggedIn === false && nextProps.loggedIn === true){
         console.log('Line 19')
-      this.displayUserList()
+        this.props.dispatch(fetchUserList());
       }
     }
     
-    displayUserList() {
-        //fetch to the api
-        this.props.dispatch(fetchUserList());
-      }
-
   render() {
     const products = this.props.protectedData.map((product, index) => <li className="items-list" 
     key={index}>

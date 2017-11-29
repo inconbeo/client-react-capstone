@@ -13,7 +13,8 @@ const initialState = {
     loading: false
 };
 
-export default function reducer(state = initialState, action) {
+export default function protectedReducer(state = initialState, action) {
+    
     if (action.type === FETCH_PROTECTED_DATA_REQUEST) {
         return Object.assign({}, state, {
             loading: true,
@@ -26,17 +27,12 @@ export default function reducer(state = initialState, action) {
             error: null,
             loading: false
         });
-    } else if (action.type === FETCH_PROTECTED_DATA_ERROR) {
+    }if (action.type === FETCH_PROTECTED_DATA_ERROR) {
         return Object.assign({}, state, {
             error: action.error,
             loading: false
         });
     }
-    return state;
-}
-
-
-export function reducer(state = initialState, action) {
     if (action.type === FETCH_USERLIST_REQUEST) {
         return Object.assign({}, state, {
             loading: true,
@@ -44,12 +40,13 @@ export function reducer(state = initialState, action) {
         })
     }
     if (action.type === FETCH_USERLIST_SUCCESS) {
+        console.log(action.data)
         return Object.assign({}, state, {
             data: action.data,
             error: null,
             loading: false
         });
-    } else if (action.type === FETCH_USERLIST_ERROR) {
+    } if (action.type === FETCH_USERLIST_ERROR) {
         return Object.assign({}, state, {
             error: action.error,
             loading: false
@@ -57,3 +54,9 @@ export function reducer(state = initialState, action) {
     }
     return state;
 }
+
+
+// export function reducer(state = initialState, action) {
+    
+//     return state;
+// }
