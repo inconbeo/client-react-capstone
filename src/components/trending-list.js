@@ -7,13 +7,21 @@ import Dashboard from './dashboard';
 import AddItemButton from './add-item-button';
 import './trending-list.css';
 export class TrendingList extends React.Component {
-    componentDidMount() {
-        if (!this.props.loggedIn) {
-            return;
+
+
+    componentWillReceiveProps(nextProps) {
+        if(this.props.loggedIn === false && nextProps.loggedIn === true){
+          console.log('Trending')
+          this.props.dispatch(fetchProtectedData());
         }
-        this.props.dispatch(fetchProtectedData());
+      }
+    // componentDidMount() {
+    //     if (!this.props.loggedIn) {
+    //         return;
+    //     }
+    //     this.props.dispatch(fetchProtectedData());
         
-    }
+    // }
     
     addToDatabase(itemId) {
         console.log('hello', itemId )
@@ -22,6 +30,7 @@ export class TrendingList extends React.Component {
       }
 
     render() {
+        console.log(this.props.loggedIn)
         const trending = this.props.protectedData.map((product, index) => <li className="items-list" 
         key={index}>
         <img key={index} src={`${product.mediumImage}`} alt="" className="img-responsive"/>
@@ -40,6 +49,7 @@ export class TrendingList extends React.Component {
             <div className="dashboard">
                 <NavBar />
                 <div className="dashboard-protected-data">
+                    <p>Hello from trending</p>
                     <ul>{trending}</ul>
                 </div>
             </div>
@@ -62,6 +72,4 @@ const mapStateToProps = (state, props) => {
     };
     
 };
-
-
 export default connect(mapStateToProps)(TrendingList);
