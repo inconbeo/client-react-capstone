@@ -1,5 +1,6 @@
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
+import {loadAuthToken} from '../local-storage'
 
 export const FETCH_PROTECTED_DATA_REQUEST = 'FETCH_CHEESE_REQUEST';
 export const fetchProtectedDataRequest = () => ({
@@ -58,13 +59,15 @@ export const fetchProtectedData = () => dispatch => {
     );
   }
 
-  export const fetchAddItem = itemId => dispatch => {
-    console.log(itemId);
-    return fetch(`${API_BASE_URL}/users/5a1ddbf3933e83ea1af34bea`, {
+  export const fetchAddItem = itemId => (dispatch, getState) => {
+    const state = getState();
+    console.log(state)
+    return fetch(`${API_BASE_URL}/users/${state.auth.currentUser.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-         'Accept': "application/json"
+         'Accept': "application/json",
+         'Authorization': `Bearer ${state.auth.authToken}`
         
       },
       body: JSON.stringify(
