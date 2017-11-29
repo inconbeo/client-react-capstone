@@ -12,7 +12,6 @@ export class TrendingList extends React.Component {
             return;
         }
         this.props.dispatch(fetchProtectedData());
-        
     }
     
     addToDatabase(itemId) {
