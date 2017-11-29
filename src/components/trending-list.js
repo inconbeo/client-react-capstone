@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import {fetchProtectedData, fetchAddItem} from '../actions/protected-data';
 import NavBar from './nav-bar';
+import Dashboard from './dashboard';
 import AddItemButton from './add-item-button';
 import './trending-list.css';
 export class TrendingList extends React.Component {
