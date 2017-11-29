@@ -1,8 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import {fetchProtectedData, fetchUserList} from '../actions/protected-data';
+import {fetchProtectedData, fetchUserList, deleteWishListItem} from '../actions/protected-data';
 import {updateCurrentUser} from '../actions/auth'
+import DeleteItemButton from './delete-button';
 
 
 export class Dashboard extends React.Component {
@@ -11,8 +12,13 @@ export class Dashboard extends React.Component {
       if(this.props.loggedIn === false && nextProps.loggedIn === true){
         console.log('Line 19')
         this.props.dispatch(fetchUserList());
+        this.props.dispatch(deleteWishListItem());
       }
     }
+    
+    deleteItem(itemId) {
+      console.log('helloDelete', itemId)
+  }
     
   render() {
     const products = this.props.protectedData.map((product, index) => <li className="items-list" 
@@ -20,7 +26,8 @@ export class Dashboard extends React.Component {
     <img key={index} src={`${product.mediumImage}`} alt="" className="img-responsive"/>
     <div>${product.salePrice}</div>
     <div>{product.name}</div>
-    {/* <button type="button" className="addButton">Add to Portfolio</button> */}
+    <DeleteItemButton itemId={product.itemId} onClick={(itemId) => this.deleteItem(itemId)}/>
+  
   </li>);
     return (
     <div className="dashboard">

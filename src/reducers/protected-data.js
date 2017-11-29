@@ -4,7 +4,8 @@ import {
     FETCH_PROTECTED_DATA_REQUEST,
     FETCH_USERLIST_ERROR,
     FETCH_USERLIST_REQUEST,
-    FETCH_USERLIST_SUCCESS
+    FETCH_USERLIST_SUCCESS,
+    DELETE_WISHLIST_ITEM
 } from '../actions/protected-data';
 
 const initialState = {
@@ -49,6 +50,11 @@ export default function protectedReducer(state = initialState, action) {
     } if (action.type === FETCH_USERLIST_ERROR) {
         return Object.assign({}, state, {
             error: action.error,
+            loading: false
+        });
+    } if (action.type === DELETE_WISHLIST_ITEM) {
+        return Object.assign({}, state, {
+            data: action.data,
             loading: false
         });
     }
