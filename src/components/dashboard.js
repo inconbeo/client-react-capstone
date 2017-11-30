@@ -13,12 +13,13 @@ export class Dashboard extends React.Component {
       if(this.props.loggedIn === false && nextProps.loggedIn === true){
         console.log('Line 19')
         this.props.dispatch(fetchUserList());
-        this.props.dispatch(deleteWishListItem());
+
       }
     }
     
     deleteItem(itemId) {
-      console.log('helloDelete', itemId)
+      console.log('helloDelete', itemId);
+      this.props.dispatch(deleteWishListItem());
   }
 
     
@@ -40,7 +41,6 @@ export class Dashboard extends React.Component {
         <div className="dashboard-protected-data">
           <p>Hello from dashboard</p>
           <ul>{products}</ul>
-          {/* <DeleteItemButton onClick={(target) => this.removeItem(target)}/> */}
         </div>
     </div>
   );
@@ -51,6 +51,7 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = (state, props) => {
   const {currentUser} = state.auth;
+  console.log('===============', state.auth)
   return {
       loggedIn: currentUser !== null,
       // username: currentUser ? state.auth.currentUser.username : '',

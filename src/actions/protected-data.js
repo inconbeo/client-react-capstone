@@ -43,6 +43,12 @@ export const deleteWishList = data => ({
     data
 });
 
+export const FETCH_ADD_ITEM_SUCCESS = 'FETCH_ADD_ITEM_SUCCESS';
+export const fetchAddItemSuccess = itemId => ({
+    type: FETCH_ADD_ITEM_SUCCESS,
+    itemId
+});
+
 
 
 // export const fetchProtectedData = () => (dispatch, getState) => {
@@ -98,14 +104,15 @@ export const fetchProtectedData = () => dispatch => {
       },
       body: JSON.stringify(
         {itemId}
-          
       )
+      }).then(() => {
+        dispatch(fetchAddItemSuccess(itemId))
     });
   };
 
   export const fetchUserList = () => (dispatch, getState) => {
     let state = getState()
-    console.log(state)
+    console.log('here is the state', state)
     let listArray = state.auth.currentUser.wishList;
     let listItem = listArray.map((item, index) => {
         return item

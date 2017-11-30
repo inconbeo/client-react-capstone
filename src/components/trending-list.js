@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import {fetchProtectedData, fetchAddItem} from '../actions/protected-data';
+import {fetchProtectedData, fetchAddItem, fetchAddItemSuccess } from '../actions/protected-data';
 import NavBar from './nav-bar';
 import Dashboard from './dashboard';
 import AddItemButton from './add-item-button';
@@ -13,12 +13,14 @@ export class TrendingList extends React.Component {
             return;
         }
         this.props.dispatch(fetchProtectedData());
+        
     }
     
     addToDatabase(itemId) {
         console.log('hello', itemId )
         //fetch to the api
         this.props.dispatch(fetchAddItem(itemId));
+        //this.props.dispatch(fetchAddItemSuccess(itemId));
       }
 
      
