@@ -131,21 +131,24 @@ export const fetchProtectedData = () => dispatch => {
   }
 
 
-  export const deleteWishListItem = () => (dispatch, getState) => {
+  export const deleteWishListItem = (itemId) => (dispatch, getState) => {
     let state = getState()
     console.log(state)
-    let listArray = state.auth.currentUser.wishList;
-    let listItem = listArray.map((item, index) => {
-        return item
+    dispatch({
+      type: DELETE_WISHLIST_ITEM,
+      itemId
     })
-    return fetch(`${API_BASE_URL}/users/${state.auth.currentUser.id}`, {
-      method: 'DELETE',
+    
+    return fetch(`${API_BASE_URL}/users/remove-item/${state.auth.currentUser.id}`, {
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
          'Accept': "application/json",
          'Authorization': `Bearer ${state.auth.authToken}`
-        
       },
+      body: {
+        itemId
+      }
     });
   };
 

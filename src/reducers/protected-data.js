@@ -53,10 +53,10 @@ export default function protectedReducer(state = initialState, action) {
             loading: false
         });
     } if (action.type === DELETE_WISHLIST_ITEM) {
-        return Object.assign({}, state, {
-            data: action.data,
-            loading: false
-        });
+        return {
+            ...state, 
+            data: state.data.filter(i => i !== action.itemId)
+        }
     }
     return state;
 }
