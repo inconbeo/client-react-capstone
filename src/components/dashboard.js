@@ -6,6 +6,7 @@ import {updateCurrentUser} from '../actions/auth'
 import DeleteItemButton from './delete-button';
 
 
+
 export class Dashboard extends React.Component {
 
     componentWillReceiveProps(nextProps) {
@@ -19,21 +20,27 @@ export class Dashboard extends React.Component {
     deleteItem(itemId) {
       console.log('helloDelete', itemId)
   }
+
     
   render() {
     const products = this.props.protectedData.map((product, index) => <li className="items-list" 
     key={index}>
-    <img key={index} src={`${product.mediumImage}`} alt="" className="img-responsive"/>
+    <a href={product.productUrl}><img key={index} src={`${product.mediumImage}`} alt="" className="img-responsive"/>
     <div>${product.salePrice}</div>
     <div>{product.name}</div>
+
     <DeleteItemButton itemId={product.itemId} onClick={(itemId) => this.deleteItem(itemId)}/>
   
+
+    </a>
+
   </li>);
     return (
     <div className="dashboard">
         <div className="dashboard-protected-data">
           <p>Hello from dashboard</p>
           <ul>{products}</ul>
+          {/* <DeleteItemButton onClick={(target) => this.removeItem(target)}/> */}
         </div>
     </div>
   );

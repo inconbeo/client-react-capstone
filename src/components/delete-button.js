@@ -10,7 +10,8 @@ export default function DeleteItemButton(props) {
   //console.log(props.itemId);
   return (
     <form onSubmit={onSubmit}>
-      <button className="delete-item-button" onClick={() => props.onClick(props.itemId)}>X</button>
+      <button className="delete-item-button" onClick={(e) => props.onClick(e.target)}>X</button>
     </form>
   );
 }
+
