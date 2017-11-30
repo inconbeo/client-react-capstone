@@ -17,15 +17,11 @@ export class TrendingList extends React.Component {
     }
     
     addToDatabase(itemId) {
-        console.log('hello', itemId )
         //fetch to the api
         this.props.dispatch(fetchAddItem(itemId));
-        //this.props.dispatch(fetchAddItemSuccess(itemId));
-      }
+    }
 
-     
-
-    render() {
+     render() {
         const trending = this.props.protectedData.map((product, index) => <li className="items-list" 
         key={index}>
         <a href={product.productUrl}><img key={index} src={`${product.mediumImage}`} alt="" className="img-responsive"/>

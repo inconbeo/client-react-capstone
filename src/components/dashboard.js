@@ -1,4 +1,5 @@
 import React from 'react';
+import store from '../store';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import {fetchProtectedData, fetchUserList, deleteWishListItem} from '../actions/protected-data';
@@ -21,8 +22,8 @@ export class Dashboard extends React.Component {
     }
     
     deleteItem(itemId) {
-      console.log('helloDelete', itemId);
-      this.props.dispatch(deleteWishListItem());
+      this.props.dispatch(deleteWishListItem(itemId));
+      this.props.dispatch(fetchUserList());
   }
 
     
@@ -37,8 +38,14 @@ export class Dashboard extends React.Component {
   
 
     </a>
+    
+ </li>);
 
-  </li>);
+
+  // Only visible to logged in users
+  if (!this.props.loggedIn) {
+    return <Redirect to="/" />;
+}
     return (
     <div className="dashboard">
         <div className="dashboard-protected-data">
@@ -54,7 +61,6 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = (state, props) => {
   const {currentUser} = state.auth;
-  console.log('FROM DASHBOARD.js===============', state.auth)
   return {
       loggedIn: currentUser !== null,
       // username: currentUser ? state.auth.currentUser.username : '',

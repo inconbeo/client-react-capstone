@@ -41,7 +41,7 @@ export default function protectedReducer(state = initialState, action) {
         })
     }
     if (action.type === FETCH_USERLIST_SUCCESS) {
-        console.log('Protected-Data.js', action.data)
+        
         return Object.assign({}, state, {
             data: action.data,
             error: null,

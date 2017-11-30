@@ -17,7 +17,9 @@ export default function reducer(state = initialState, action) {
         });
     } else if (action.type === DELETE_WISHLIST_ITEM) {
         return Object.assign({}, state, {
-            ...state.currentUser
+            currentUser: Object.assign({}, state.currentUser, {
+                wishList: state.currentUser.wishList.filter(item => item != action.itemId)
+                })
         });
     } else if (action.type === FETCH_ADD_ITEM_SUCCESS) {
         console.log(action);

@@ -83,8 +83,7 @@ export const fetchProtectedData = () => dispatch => {
     return response.json()
     })
     .then(data => {
-      console.log(data)
-        dispatch(fetchProtectedDataSuccess(data.items));
+      dispatch(fetchProtectedDataSuccess(data.items));
         
     })
     .catch(err => dispatch(fetchProtectedDataError(err))
@@ -93,7 +92,6 @@ export const fetchProtectedData = () => dispatch => {
 
   export const fetchAddItem = itemId => (dispatch, getState) => {
     const state = getState();
-    console.log(state)
     return fetch(`${API_BASE_URL}/users/${state.auth.currentUser.id}`, {
       method: 'PUT',
       headers: {
@@ -116,7 +114,7 @@ export const fetchProtectedData = () => dispatch => {
     let listItem = listArray.map((item, index) => {
         return item
     })
-    console.log('fetchUserList in Protected-Data-Actions',listItem)
+    
     dispatch(fetchUserlistRequest())
     return fetch(`https://cors-anywhere.herokuapp.com/http://api.walmartlabs.com/v1/items?ids=${listItem}&apiKey=btbth79qwypgtfubhamzjc4u&format=json`, 
     {"x-requested-with": "xhr"}
@@ -139,22 +137,22 @@ export const fetchProtectedData = () => dispatch => {
 
   export const deleteWishListItem = (itemId) => (dispatch, getState) => {
     let state = getState()
-    console.log(state)
     dispatch({
       type: DELETE_WISHLIST_ITEM,
       itemId
     })
     
     return fetch(`${API_BASE_URL}/users/remove-item/${state.auth.currentUser.id}`, {
+      
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
          'Accept': "application/json",
          'Authorization': `Bearer ${state.auth.authToken}`
       },
-      body: {
-        itemId
-      }
-    });
-  };
+      body: JSON.stringify(
+        {itemId}
+    )
+  })
+}
 
