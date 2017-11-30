@@ -112,12 +112,11 @@ export const fetchProtectedData = () => dispatch => {
 
   export const fetchUserList = () => (dispatch, getState) => {
     let state = getState()
-    console.log('here is the state', state)
     let listArray = state.auth.currentUser.wishList;
     let listItem = listArray.map((item, index) => {
         return item
     })
-    console.log(listItem)
+    console.log('fetchUserList in Protected-Data-Actions',listItem)
     dispatch(fetchUserlistRequest())
     return fetch(`https://cors-anywhere.herokuapp.com/http://api.walmartlabs.com/v1/items?ids=${listItem}&apiKey=btbth79qwypgtfubhamzjc4u&format=json`, 
     {"x-requested-with": "xhr"}

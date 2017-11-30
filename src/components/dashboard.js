@@ -11,9 +11,12 @@ export class Dashboard extends React.Component {
 
     componentWillReceiveProps(nextProps) {
       if(this.props.loggedIn === false && nextProps.loggedIn === true){
-        console.log('Line 19')
         this.props.dispatch(fetchUserList());
-
+      }
+    }
+    componentWillMount() {
+      if(this.props.loggedIn){
+        this.props.dispatch(fetchUserList());
       }
     }
     
@@ -51,7 +54,7 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = (state, props) => {
   const {currentUser} = state.auth;
-  console.log('===============', state.auth)
+  console.log('FROM DASHBOARD.js===============', state.auth)
   return {
       loggedIn: currentUser !== null,
       // username: currentUser ? state.auth.currentUser.username : '',
