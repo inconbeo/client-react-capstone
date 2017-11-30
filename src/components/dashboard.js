@@ -31,6 +31,12 @@ export class Dashboard extends React.Component {
     </a>
     {/* <button type="button" className="addButton">Add to Portfolio</button> */}
   </li>);
+   
+   // Only visible to logged in users
+   if (!this.props.loggedIn) {
+    return <Redirect to="/" />;
+}
+    
     return (
     <div className="dashboard">
         <div className="dashboard-protected-data">
