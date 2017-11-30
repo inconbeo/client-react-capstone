@@ -5,6 +5,7 @@ import {fetchProtectedData, fetchAddItem} from '../actions/protected-data';
 import NavBar from './nav-bar';
 import Dashboard from './dashboard';
 import AddItemButton from './add-item-button';
+
 import './trending-list.css';
 export class TrendingList extends React.Component {
     componentDidMount() {
@@ -20,6 +21,8 @@ export class TrendingList extends React.Component {
         this.props.dispatch(fetchAddItem(itemId));
       }
 
+     
+
     render() {
         const trending = this.props.protectedData.map((product, index) => <li className="items-list" 
         key={index}>
@@ -27,7 +30,10 @@ export class TrendingList extends React.Component {
         <div>${product.salePrice}</div>
         <div>{product.name}</div>
         {/* <button type="button" className="addButton">Add to Portfolio</button> */}
-        <AddItemButton itemId={product.itemId} onClick={(itemId) => this.addToDatabase(itemId)}/></a>
+
+        <AddItemButton itemId={product.itemId} onClick={(itemId) => this.addToDatabase(itemId)}/>
+       </a>
+
       </li>);
       
       // Only visible to logged in users

@@ -37,6 +37,12 @@ export const fetchUserlistError = error => ({
     error
 });
 
+export const DELETE_WISHLIST_ITEM = 'DELETE_WISHLIST_ITEM';
+export const deleteWishList = data => ({
+    type: DELETE_WISHLIST_ITEM,
+    data
+});
+
 
 
 // export const fetchProtectedData = () => (dispatch, getState) => {
@@ -116,7 +122,6 @@ export const fetchProtectedData = () => dispatch => {
     return response.json()
     })
     .then(data => {
-      console.log(data, '119 protected data')
         dispatch(fetchUserlistSuccess(data.items))
     })
     .catch(err => {
@@ -124,4 +129,26 @@ export const fetchProtectedData = () => dispatch => {
       dispatch(fetchUserlistError(err))
     });
   }
+
+
+  export const deleteWishListItem = (itemId) => (dispatch, getState) => {
+    let state = getState()
+    console.log(state)
+    dispatch({
+      type: DELETE_WISHLIST_ITEM,
+      itemId
+    })
+    
+    return fetch(`${API_BASE_URL}/users/remove-item/${state.auth.currentUser.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+         'Accept': "application/json",
+         'Authorization': `Bearer ${state.auth.authToken}`
+      },
+      body: {
+        itemId
+      }
+    });
+  };
 
