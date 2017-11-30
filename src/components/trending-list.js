@@ -23,11 +23,11 @@ export class TrendingList extends React.Component {
     render() {
         const trending = this.props.protectedData.map((product, index) => <li className="items-list" 
         key={index}>
-        <img key={index} src={`${product.mediumImage}`} alt="" className="img-responsive"/>
+        <a href={product.productUrl}><img key={index} src={`${product.mediumImage}`} alt="" className="img-responsive"/>
         <div>${product.salePrice}</div>
         <div>{product.name}</div>
         {/* <button type="button" className="addButton">Add to Portfolio</button> */}
-        <AddItemButton itemId={product.itemId} onClick={(itemId) => this.addToDatabase(itemId)}/>
+        <AddItemButton itemId={product.itemId} onClick={(itemId) => this.addToDatabase(itemId)}/></a>
       </li>);
       
       // Only visible to logged in users

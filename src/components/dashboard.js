@@ -5,6 +5,7 @@ import {fetchProtectedData, fetchUserList} from '../actions/protected-data';
 import {updateCurrentUser} from '../actions/auth'
 
 
+
 export class Dashboard extends React.Component {
 
     componentWillReceiveProps(nextProps) {
@@ -14,12 +15,20 @@ export class Dashboard extends React.Component {
       }
     }
     
+    
+    // removeItem(target) {
+    //   let array = this.props.state.auth.currentUser.wishList;
+    //   let index = array.indexOf(target);
+    //   array.splice(index, 1);
+    // }
+    
   render() {
     const products = this.props.protectedData.map((product, index) => <li className="items-list" 
     key={index}>
-    <img key={index} src={`${product.mediumImage}`} alt="" className="img-responsive"/>
+    <a href={product.productUrl}><img key={index} src={`${product.mediumImage}`} alt="" className="img-responsive"/>
     <div>${product.salePrice}</div>
     <div>{product.name}</div>
+    </a>
     {/* <button type="button" className="addButton">Add to Portfolio</button> */}
   </li>);
     return (
@@ -27,6 +36,7 @@ export class Dashboard extends React.Component {
         <div className="dashboard-protected-data">
           <p>Hello from dashboard</p>
           <ul>{products}</ul>
+          {/* <DeleteItemButton onClick={(target) => this.removeItem(target)}/> */}
         </div>
     </div>
   );
