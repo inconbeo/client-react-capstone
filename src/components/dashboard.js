@@ -36,10 +36,7 @@ export class Dashboard extends React.Component {
     <div className="name">{product.name}</div>
 
     <DeleteItemButton itemId={product.itemId} onClick={(itemId) => this.deleteItem(itemId)}/>
-  
-
     </a>
-    
  </li>);
 
 if(this.props.dashboardData && products.length === 0) {
