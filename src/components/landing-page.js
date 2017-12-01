@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
+import './landing-page.css'
 
 import LoginForm from './login-form';
 
@@ -14,7 +15,8 @@ export function LandingPage(props) {
         <div className="home">
             {/* <h2>Welcome to Walmart Trending Products App</h2> */}
             <LoginForm />
-            <Link to="/register">Register</Link>
+            <p className='newText'>New to ePhendy?</p>
+            <button className='registerAccountButton'><Link to="/register">Create an account</Link></button>
         </div>
     );
 }
