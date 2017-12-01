@@ -6,6 +6,7 @@ import {fetchProtectedData, fetchUserList, deleteWishListItem} from '../actions/
 import {updateCurrentUser} from '../actions/auth'
 import DeleteItemButton from './delete-button';
 import NavBar from './nav-bar';
+import ReactLoading from 'react-loading'
 
 
 
@@ -13,8 +14,7 @@ export class Dashboard extends React.Component {
 
     componentWillReceiveProps(nextProps) {
       if(this.props.loggedIn === false && nextProps.loggedIn === true){
-        this.props.dispatch(fetchUserList());
-        console.log('why')
+        this.props.dispatch(fetchUserList()); 
       }
     }
     componentWillMount() {
@@ -27,6 +27,7 @@ export class Dashboard extends React.Component {
       this.props.dispatch(deleteWishListItem(itemId));
   }
 
+  
     
   render() {
     const products = this.props.dashboardData.map((product, index) => <li className="items-list" 
@@ -52,9 +53,9 @@ if(this.props.dashboardData && products.length === 0) {
 }
     return (
     <div className="dashboard">
+    <h1>{this.props.auth.currentUser.username.toUpperCase()}'S DASHBOARD</h1>
         <div className="dashboard-protected-data">
           <NavBar/>
-          <p>Hello from dashboard</p>
           <ul>{products}</ul>
         </div>
     </div>
@@ -73,7 +74,8 @@ const mapStateToProps = (state, props) => {
       //     ? `${currentUser.firstName} ${currentUser.lastName}`
       //     : '',
       protectedData: state.protectedData.data,
-      dashboardData: state.protectedData.dashboardData
+      dashboardData: state.protectedData.dashboardData,
+      auth: state.auth
   };
   
 };
