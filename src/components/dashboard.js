@@ -14,6 +14,7 @@ export class Dashboard extends React.Component {
     componentWillReceiveProps(nextProps) {
       if(this.props.loggedIn === false && nextProps.loggedIn === true){
         this.props.dispatch(fetchUserList());
+        console.log('why')
       }
     }
     componentWillMount() {
