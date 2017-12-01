@@ -1,0 +1,30 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  margin: 0 auto;
+}
+
+.newText{
+  margin-top: 0;
+  font-size: .75em
+}
+
+.registerAccountButton {
+  color: black;
+  height: 31px;
+  background: #eff0f3;
+  background: -webkit-linear-gradient(top,#f7f8fa,#e7e9ec);
+  background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+}
+
+.registerAccountButton > a:visited {
+  color:black;
+}
+
+@media only screen and (min-width: 700px) {
+  .logout {
+ 
+}
+
+}
