@@ -24,14 +24,12 @@ export class TrendingList extends React.Component {
      render() {
         const trending = this.props.protectedData.map((product, index) => <div className="items-list" 
         key={index}>
-     
         <a href={product.productUrl}><img key={index} src={`${product.mediumImage}`} alt="" className="image"/>
         <div className="price">${product.salePrice}</div>
         <div className="name">{product.name}</div>
 
         <AddItemButton item={product} onClick={() => this.addToDatabase(product)}/>
        </a>
-       
       </div>);
        
        if(this.props.protectedData && trending.length === 0) {
@@ -47,7 +45,6 @@ export class TrendingList extends React.Component {
             <div className="dashboard">
                 <NavBar />
                 <div className="dashboard-protected-data">
-                    
                     {trending}
                 </div>
             </div>

@@ -54,7 +54,7 @@ if(this.props.dashboardData && products.length === 0) {
     <div className="dashboard">
         <div className="dashboard-protected-data">
           <NavBar/>
-          <ul>{products}</ul>
+          {products}
         </div>
     </div>
   );
