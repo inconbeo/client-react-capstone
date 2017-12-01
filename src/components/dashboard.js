@@ -6,6 +6,7 @@ import {fetchProtectedData, fetchUserList, deleteWishListItem} from '../actions/
 import {updateCurrentUser} from '../actions/auth'
 import DeleteItemButton from './delete-button';
 import NavBar from './nav-bar';
+import './dashboard.css';
 
 
 
@@ -30,9 +31,9 @@ export class Dashboard extends React.Component {
   render() {
     const products = this.props.dashboardData.map((product, index) => <li className="items-list" 
     key={index}>
-    <a href={product.productUrl}><img key={index} src={`${product.mediumImage}`} alt="" className="img-responsive"/>
-    <div>${product.salePrice}</div>
-    <div>{product.name}</div>
+    <a href={product.productUrl}><img key={index} src={`${product.mediumImage}`} alt="" className="image"/>
+    <div className="price">${product.salePrice}</div>
+    <div className="name">{product.name}</div>
 
     <DeleteItemButton itemId={product.itemId} onClick={(itemId) => this.deleteItem(itemId)}/>
   
@@ -53,7 +54,6 @@ if(this.props.dashboardData && products.length === 0) {
     <div className="dashboard">
         <div className="dashboard-protected-data">
           <NavBar/>
-          <p>Hello from dashboard</p>
           <ul>{products}</ul>
         </div>
     </div>
