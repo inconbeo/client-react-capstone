@@ -55,7 +55,10 @@ if(this.props.dashboardData && products.length === 0) {
 
     return (
       <div className='zeroItemDisplay'>
-        <h1 className='zeroWishlistText'>Please add items to your wishlist</h1>
+      
+      <h1 className="zeroWishlistText">{this.props.auth.currentUser.username.toUpperCase()}'S WISHLIST</h1>
+      
+        <h1>Please add items to your wishlist</h1>
         <button className='trendingButton'><Link to="/">Go To Trending Products</Link></button>
 
       </div>
@@ -65,7 +68,7 @@ if(this.props.dashboardData && products.length === 0) {
   }
     return (
     <div className="dashboard">
-
+    <NavBar />
     <h1 className="dashname">{this.props.auth.currentUser.username.toUpperCase()}'S WISHLIST</h1>
 
         <div className="dashboard-protected-data">
