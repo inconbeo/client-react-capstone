@@ -52,7 +52,7 @@ if(this.props.dashboardData && products.length === 0) {
     return (
     <div className="dashboard">
 
-    <h1 className="dashname">{this.props.auth.currentUser.username.toUpperCase()}'S DASHBOARD</h1>
+    <h1 className="dashname">{this.props.auth.currentUser.username.toUpperCase()}'S WISHLIST</h1>
 
         <div className="dashboard-protected-data">
           <ul>{products}</ul>
