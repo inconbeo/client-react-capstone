@@ -10,7 +10,7 @@ export default function AddItemButton(props) {
  
   return (
     <form onSubmit={onSubmit}>
-      <button className="add-item-button" onClick={() => props.onClick(props.itemId)}>Add Item</button>
+      <button className="add-item-button" onClick={props.onClick}>Add Item</button>
     </form>
   );
 }
