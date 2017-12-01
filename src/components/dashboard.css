@@ -19,6 +19,7 @@
       /* border: 1px solid black; */
       padding: 30px 30px;
       background-color: white;
+      margin-bottom: 50px;
      
     }
 
@@ -63,13 +64,17 @@
     .items-list:hover {
       transform: scale(1.05);
       /* border: 2px solid green; */
-      padding: 5px 5px;
+      /* padding: 5px 5px; */
       
     }
     
     h1, .login-form, .home {
         text-align: center;
         
+    }
+
+    .dashname {
+        margin-top: 53px;
     }
   
     

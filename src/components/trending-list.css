@@ -64,7 +64,7 @@
     .items-list:hover {
       transform: scale(1.05);
       /* border: 2px solid green; */
-      padding: 5px 5px;
+      /* padding: 5px 5px; */
           
     }
     
@@ -92,7 +92,7 @@
       .items-list {
         width: 33.333333%;
         float: left;
-        padding: 0px 10px;
+        /* padding: 0px 10px; */
         
       }
   

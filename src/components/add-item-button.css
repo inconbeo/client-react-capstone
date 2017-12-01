@@ -1,4 +1,4 @@
-.add-item-button {
+/* .add-item-button {
     
     color: white;
     margin-top: -80px;
@@ -12,7 +12,54 @@
     -webkit-transition:box-shadow 0.5s;
     
     
+} */
+
+.add-item-button {
+    width: 25%;
+    height: 31px;
+    margin-top: 10px;
+    transition: all 100ms linear;
+    background-color: rgb(36, 104, 207);
+    color: white;
+    border: none;
+    margin-bottom: 15px;
+
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    /* ...and now for the proper property */
+    transition:.5s;
+
 }
 
+.add-item-button:hover {
+    background: rgb(230, 158, 34);
+}
+
+.add-item-button:active {
+transform: translateY(4px)
+}
 button:focus {outline:0;}
 
+@media only screen and (min-width: 700px) {
+    .add-item-button {
+        min-width: 100px;
+        width: 25%;
+        height: 31px;
+        margin-top: 10px;
+        transition: all 100ms linear;
+        background-color: rgb(36, 104, 207);
+        color: white;
+        border: none;
+        margin-bottom: 15px;
+    
+        -o-transition:.5s;
+        -ms-transition:.5s;
+        -moz-transition:.5s;
+        -webkit-transition:.5s;
+        /* ...and now for the proper property */
+        transition:.5s;
+    
+    }
+}
