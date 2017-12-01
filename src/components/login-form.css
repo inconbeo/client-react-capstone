@@ -9,7 +9,7 @@ form {
 
 form input {
   margin-top: 10px;
-  width: 75%;
+  width: 21em;
   height: 31px;
   margin-bottom: 10px;
   border: 1px solid #a6a6a6;
@@ -24,7 +24,7 @@ box-shadow: 0 0 3px 2px rgba(36, 104, 207,.5);
 }
 
 form button {
-  width: 65%;
+  width: 20em;
   height: 31px;
   margin-top: 10px;
   transition: all 100ms linear;

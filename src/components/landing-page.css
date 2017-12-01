@@ -1,7 +1,7 @@
 .home {
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 20em;
   margin: 0 auto;
 }
 
@@ -16,10 +16,6 @@
   background: #eff0f3;
   background: -webkit-linear-gradient(top,#f7f8fa,#e7e9ec);
   background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
-}
-
-.registerAccountButton > a:hover {
-  color:black;
 }
 
 .registerAccountButton > a:visited {

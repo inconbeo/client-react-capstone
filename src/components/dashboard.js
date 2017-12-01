@@ -51,9 +51,9 @@ if(this.props.dashboardData && products.length === 0) {
 }
     return (
     <div className="dashboard">
+    <NavBar/>
     <h1>{this.props.auth.currentUser.username.toUpperCase()}'S DASHBOARD</h1>
         <div className="dashboard-protected-data">
-          <NavBar/>
           <ul>{products}</ul>
         </div>
     </div>
