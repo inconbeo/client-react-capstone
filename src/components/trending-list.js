@@ -27,22 +27,26 @@ export class TrendingList extends React.Component {
         <a href={product.productUrl}><img key={index} src={`${product.mediumImage}`} alt="" className="img-responsive"/>
         <div>${product.salePrice}</div>
         <div>{product.name}</div>
-        {/* <button type="button" className="addButton">Add to Portfolio</button> */}
 
-        <AddItemButton itemId={product.itemId} onClick={(itemId) => this.addToDatabase(itemId)}/>
+        <AddItemButton item={product} onClick={() => this.addToDatabase(product)}/>
        </a>
 
       </li>);
+       
+       if(this.props.protectedData && trending.length === 0) {
+        console.log('length', trending.length);
+    }
       
       // Only visible to logged in users
         if (!this.props.loggedIn) {
             return <Redirect to="/" />;
         }
-
+       
         return (
             <div className="dashboard">
                 <NavBar />
                 <div className="dashboard-protected-data">
+                    hello from trending
                     <ul>{trending}</ul>
                 </div>
             </div>
