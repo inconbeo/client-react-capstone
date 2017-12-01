@@ -1,17 +1,27 @@
 .delete-item-button {
-    
-    color:white;
-    margin-top: -50px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    border-radius: 20px;
-    padding: 10px 10px;
+    min-width: 100px;
+    width: 25%;
+    height: 31px;
+    margin-top: 10px;
+    transition: all 100ms linear;
     background-color: rgb(36, 104, 207);
-    opacity: 0.8;
-    box-shadow: 0px 2px 1px white inset, 0px -2px 8px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
-    -webkit-transition:box-shadow 0.5s;
-    
-    
+    color: white;
+    border: none;
+    margin-bottom: 15px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    /* ...and now for the proper property */
+    transition:.5s;
+}
+
+.delete-item-button:hover {
+    background: rgb(230, 158, 34);
+}
+
+.delete-item-button:active {
+transform: translateY(4px)
 }
 
 button:focus {outline:0;}
