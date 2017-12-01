@@ -15,6 +15,7 @@
 } */
 
 .add-item-button {
+    min-width: 100px;
     width: 25%;
     height: 31px;
     margin-top: 10px;
