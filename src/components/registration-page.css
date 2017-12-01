@@ -1,0 +1,16 @@
+.accountText{
+  margin-top: 0;
+  font-size: .75em
+}
+
+.loginButton {
+  color: black;
+  height: 31px;
+  background: #eff0f3;
+  background: -webkit-linear-gradient(top,#f7f8fa,#e7e9ec);
+  background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+}
+
+.loginButton > a:visited {
+  color:black;
+}
