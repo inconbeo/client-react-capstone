@@ -26,16 +26,15 @@ export class TrendingList extends React.Component {
          if(this.props.protectedData.length < 1) {
             <ReactLoading className='loader' type={'spinningBubbles'} color={'#000'} height='300' width='375' />   
          }
-        const trending = this.props.protectedData.map((product, index) => <li className="items-list" 
-        key={index}>
-        <a href={product.productUrl}><img key={index} src={`${product.mediumImage}`} alt="" className="img-responsive"/>
-        <div>${product.salePrice}</div>
-        <div>{product.name}</div>
-
-        <AddItemButton item={product} onClick={() => this.addToDatabase(product)}/>
-       </a>
-
-      </li>);
+         const trending = this.props.protectedData.map((product, index) => <div className="items-list" 
+         key={index}>
+         <a href={product.productUrl}><img key={index} src={`${product.mediumImage}`} alt="" className="image"/>
+         <div className="price">${product.salePrice}</div>
+         <div className="name">{product.name}</div>
+ 
+         <AddItemButton item={product} onClick={() => this.addToDatabase(product)}/>
+        </a>
+       </div>);
        
        if(this.props.protectedData && trending.length === 0) {
         console.log('length', trending.length);
@@ -50,7 +49,6 @@ export class TrendingList extends React.Component {
             <div className="dashboard">
                 <NavBar />
                 <div className="dashboard-protected-data">
-                    hello from trending
                     <ul>{trending}</ul>
                 </div>
             </div>

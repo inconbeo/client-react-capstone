@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './delete-button.css';
 
 export default function DeleteItemButton(props) {
   const onSubmit = e => { 
@@ -9,7 +9,7 @@ export default function DeleteItemButton(props) {
   
   return (
     <form onSubmit={onSubmit}>
-      <button className="delete-item-button" onClick={() => props.onClick(props.itemId)}>X</button>
+      <button className="delete-item-button" onClick={() => props.onClick(props.itemId)}>Remove item</button>
     </form>
   );
 }

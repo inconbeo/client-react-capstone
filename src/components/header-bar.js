@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {setCurrentUser, setAuthToken} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
+import './header-bar.css';
 
 export class HeaderBar extends React.Component {
     logOut() {
@@ -15,13 +16,13 @@ export class HeaderBar extends React.Component {
         let logOutButton;
         if (this.props.loggedIn) {
             logOutButton = (
-                <button onClick={() => this.logOut()}>Log out</button>
+                <button className="logout" onClick={() => this.logOut()}>Log out</button>
             );
         }
         return (
             <div className="header-bar">
-                <h1>Walmart Trending Products</h1>
-                <div className="logout">{logOutButton}</div>
+                <h1>ePhendy</h1>
+                <div className="log">{logOutButton}</div>
             </div>
         );
     }
