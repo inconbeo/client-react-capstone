@@ -1,4 +1,4 @@
-import { SET_AUTH_TOKEN, SET_CURRENT_USER, UPDATE_CURRENT_USER } from '../actions/auth';
+import { SET_AUTH_TOKEN, SET_CURRENT_USER } from '../actions/auth';
 import { FETCH_ADD_ITEM_SUCCESS, DELETE_WISHLIST_ITEM } from '../actions/protected-data';
 
 const initialState = {
@@ -18,7 +18,7 @@ export default function reducer(state = initialState, action) {
     } else if (action.type === DELETE_WISHLIST_ITEM) {
         return Object.assign({}, state, {
             currentUser: Object.assign({}, state.currentUser, {
-                wishList: state.currentUser.wishList.filter(item => item != action.itemId)
+                wishList: state.currentUser.wishList.filter(item => item !== action.itemId)
                 })
         });
     } else if (action.type === FETCH_ADD_ITEM_SUCCESS) {

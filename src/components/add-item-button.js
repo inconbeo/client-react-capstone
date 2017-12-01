@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
-import { fetchAddItemSuccess } from '../actions/protected-data';
+import React from 'react';
 import './add-item-button.css';
 
 export default function AddItemButton(props) {
   const onSubmit = e => { 
     e.preventDefault()
-    e.target.value;
-   
   }
  
   return (

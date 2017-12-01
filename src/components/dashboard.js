@@ -1,12 +1,9 @@
 import React from 'react';
-import store from '../store';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
-import {fetchProtectedData, fetchUserList, deleteWishListItem} from '../actions/protected-data';
-import {updateCurrentUser} from '../actions/auth'
+import {fetchUserList, deleteWishListItem} from '../actions/protected-data';
 import DeleteItemButton from './delete-button';
 import NavBar from './nav-bar';
-import ReactLoading from 'react-loading';
 import './dashboard.css'
 
 

@@ -1,6 +1,4 @@
 import { API_BASE_URL } from '../config';
-import { normalizeResponseErrors } from './utils';
-import { loadAuthToken } from '../local-storage';
 
 export const FETCH_PROTECTED_DATA_REQUEST = 'FETCH_PROTECTED_DATA_REQUEST';
 export const fetchProtectedDataRequest = () => ({

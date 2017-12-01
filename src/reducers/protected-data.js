@@ -4,9 +4,8 @@ import {
   FETCH_PROTECTED_DATA_REQUEST,
   FETCH_USERLIST_ERROR,
   FETCH_USERLIST_REQUEST,
-  FETCH_USERLIST_SUCCESS,
-  FETCH_ADD_ITEM_SUCCESS
-} from '../actions/protected-data';
+  FETCH_USERLIST_SUCCESS
+  } from '../actions/protected-data';
 
 const initialState = {
   data: [],

@@ -1,11 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import {fetchProtectedData, fetchAddItem, fetchAddItemSuccess } from '../actions/protected-data';
+import {fetchProtectedData, fetchAddItem} from '../actions/protected-data';
 import NavBar from './nav-bar';
-import Dashboard from './dashboard';
 import AddItemButton from './add-item-button';
-import ReactLoading from 'react-loading'
 
 import './trending-list.css';
 export class TrendingList extends React.Component {
@@ -23,9 +21,6 @@ export class TrendingList extends React.Component {
     }
 
      render() {
-         if(this.props.protectedData.length < 1) {
-            <ReactLoading className='loader' type={'spinningBubbles'} color={'#000'} height='300' width='375' />   
-         }
          const trending = this.props.protectedData.map((product, index) => <div className="items-list" 
          key={index}>
          <a href={product.productUrl}><img key={index} src={`${product.mediumImage}`} alt="" className="image"/>

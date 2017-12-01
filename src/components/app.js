@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
-import NavBar from './nav-bar';
 import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import TrendingList from './trending-list';

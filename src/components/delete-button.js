@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './delete-button.css';
 
 export default function DeleteItemButton(props) {
   const onSubmit = e => { 
     e.preventDefault()
-    e.target.value;
+    
   }
   
   return (
