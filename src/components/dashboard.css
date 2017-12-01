@@ -105,3 +105,30 @@
         margin: 0px auto;
       }
     }
+
+    .trendingButton {
+      color: black;
+      height: 31px;
+      background: #eff0f3;
+      background: -webkit-linear-gradient(top,#f7f8fa,#e7e9ec);
+      background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+      width: 20em;
+      align-self: center;
+    }
+
+    .zeroItemDisplay {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .trendingButton > a:visited {
+      color: black;
+    }
+
+    .trendingButton:hover {
+      background: lightgreen;
+    }
+
+    .zeroWishlistText {
+      margin-top: 2.5em;
+    }

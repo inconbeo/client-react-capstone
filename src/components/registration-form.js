@@ -4,6 +4,7 @@ import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
+import './login-form.css'
 
 export class RegistrationForm extends React.Component {
     onSubmit(values) {

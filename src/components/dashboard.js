@@ -1,13 +1,14 @@
 import React from 'react';
 import store from '../store';
 import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import {fetchProtectedData, fetchUserList, deleteWishListItem} from '../actions/protected-data';
 import {updateCurrentUser} from '../actions/auth'
 import DeleteItemButton from './delete-button';
 import NavBar from './nav-bar';
 import ReactLoading from 'react-loading';
 import './dashboard.css'
+
 
 
 
@@ -49,10 +50,23 @@ if(this.props.dashboardData && products.length === 0) {
   if (!this.props.loggedIn) {
     return <Redirect to="/" />;
 }
+
+  if(this.props.dashboardData.length === 0) {
+
+    return (
+      <div className='zeroItemDisplay'>
+        <h1 className='zeroWishlistText'>Please add items to your wishlist</h1>
+        <button className='trendingButton'><Link to="/">Go To Trending Products</Link></button>
+
+      </div>
+    )
+    
+    
+  }
     return (
     <div className="dashboard">
 
-    <h1 className="dashname">{this.props.auth.currentUser.username.toUpperCase()}'S DASHBOARD</h1>
+    <h1 className="dashname">{this.props.auth.currentUser.username.toUpperCase()}'S WISHLIST</h1>
 
         <div className="dashboard-protected-data">
           <ul>{products}</ul>
