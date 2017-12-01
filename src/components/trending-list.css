@@ -5,20 +5,16 @@
 }
 
 
-.container {
-    width: 100%;
-    margin: 5% auto;
-    text-align: center;
-  }
+
   
   li {
     list-style: none;
-    color: white;
+    background-color: rgb(92, 12, 12);
     font-weight: 700px;
   }
   
   .items-list {
-    /* background-color: #d91515; */
+    background-color: white;
     height: 70%;
     width: 50%;
     text-align: center;
@@ -26,6 +22,12 @@
     /* border: 1px solid black; */
     padding: 30px 30px;
     
+  }
+
+  .items-list:hover {
+    -moz-box-shadow: 0 0 10px #ccc;
+		-webkit-box-shadow: 0 0 10px #ccc;
+		box-shadow: 0 0 10px #ccc;
   }
 
   .name {
