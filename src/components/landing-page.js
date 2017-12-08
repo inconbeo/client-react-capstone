@@ -15,7 +15,7 @@ export function LandingPage(props) {
         <div className="home">
             {/* <h2>Welcome to Walmart Trending Products App</h2> */}
             <LoginForm />
-            <p className='newText'>New to ePhendy?</p>
+            <p className='newText'>New to eTrendy?</p>
             <button className='registerAccountButton'><Link to="/register">Create an account</Link></button>
         </div>
     );
