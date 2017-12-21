@@ -1,56 +1,53 @@
 h1 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
-
 
 .log {
-    width: 30px;
+  width: 30px;
 }
 
-
 .logout {
-    position: absolute;
-    left: 5px;
-    right: 5px;
-    background: #ECECEC;
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  background: #ececec;
+  border-radius: 15px;
+  padding: 5px 10px;
+  display: block;
+  font-family: arial;
+  font-weight: bold;
+  color: #7f7f7f;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #fff;
+  border: 1px solid #a7a7a7;
+  width: 100px;
+  margin: 0px auto;
+  font-size: 15px;
+  box-shadow: 0px 2px 1px white inset, 0px -2px 8px white,
+    0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition: box-shadow 0.5s;
+}
+
+@media only screen and (min-width: 700px) {
+  .logout {
+    margin-top: -55px;
+    margin-right: 10px;
+    background: #ececec;
     border-radius: 15px;
     padding: 5px 10px;
     display: block;
     font-family: arial;
     font-weight: bold;
-    color:#7f7f7f;
+    color: #7f7f7f;
     text-decoration: none;
-    text-shadow:0px 1px 0px #fff;
-    border:1px solid #a7a7a7;
+    text-shadow: 0px 1px 0px #fff;
+    border: 1px solid #a7a7a7;
     width: 100px;
-    margin:0px auto;
+    /* margin:0px auto; */
     font-size: 15px;
-    box-shadow: 0px 2px 1px white inset, 0px -2px 8px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
-    -webkit-transition:box-shadow 0.5s;
-}
-    
-
-
-@media only screen and (min-width: 700px) {
-        .logout {
-        margin-top: -55px;
-        margin-right: 10px;
-        background: #ECECEC;
-		border-radius: 15px;
-		padding: 5px 10px;
-		display: block;
-		font-family: arial;
-		font-weight: bold;
-		color:#7f7f7f;
-		text-decoration: none;
-		text-shadow:0px 1px 0px #fff;
-		border:1px solid #a7a7a7;
-		width: 100px;
-		/* margin:0px auto; */
-		font-size: 15px;
-		box-shadow: 0px 2px 1px white inset, 0px -2px 8px white, 0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
-        -webkit-transition:box-shadow 0.5s;
-    }
-    
+    box-shadow: 0px 2px 1px white inset, 0px -2px 8px white,
+      0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition: box-shadow 0.5s;
   }
+}
