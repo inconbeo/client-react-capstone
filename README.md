@@ -9,6 +9,8 @@ This app updates trending products frequently. Users  can create an account and 
 ## SCREENSHOTS
 ![alt text](screenshots/etrendy-login.jpg "login-page")
 
+*****************************************************************
+
 ![alt text](screenshots/etrendy3.jpg "trending page")
 
 ## KEY USER FEATURES
