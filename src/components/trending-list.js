@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { fetchProtectedData, fetchAddItem } from '../actions/protected-data';
 import NavBar from './nav-bar';
 import AddItemButton from './add-item-button';
+import { ClipLoader } from 'react-spinners';
 import './trending-list.css';
 
 
@@ -21,6 +22,18 @@ export class TrendingList extends React.Component {
   }
 
   render() {
+    const styles = {'textAlign': 'center'}
+    if(this.props.loading){
+      return (
+        <div className='loading' style={styles}>
+          <ClipLoader
+            color={'#0D8FA7'}
+            loading={this.props.loading} 
+          />
+        </div>
+      )
+    }
+
     const trending = this.props.protectedData.map((product, index) => (
       <div className="items-list" key={index}>
         <a href={product.productUrl}>
@@ -65,7 +78,8 @@ const mapStateToProps = (state, props) => {
   const { currentUser } = state.auth;
   return {
     loggedIn: currentUser !== null,
-    protectedData: state.protectedData.data
+    protectedData: state.protectedData.data,
+    loading: state.protectedData.loading
   };
 };
 
