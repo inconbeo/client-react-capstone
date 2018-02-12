@@ -1,8 +1,15 @@
 # ETRENDY APP
 
+https://etrendy.netlify.com/
+
 ## ABOUT THIS PROJECT
 This app allows users to view trending products across many different vendors.
 This app updates trending products frequently. Users  can create an account and save items to their wishlist dashboard. Users can click on the items which direct them to the purchase site.  
+
+## SCREENSHOTS
+![alt text](screenshots/etrendy-login.jpg "login-page")
+
+![alt text](screenshots/etrendy3.jpg "trending page")
 
 ## KEY USER FEATURES
 AS a ***USER***, you will be able to:
