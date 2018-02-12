@@ -46,26 +46,6 @@ export const fetchAddItemSuccess = itemId => ({
   itemId
 });
 
-// export const fetchProtectedData = () => (dispatch, getState) => {
-//     const authToken = getState().auth.authToken;
-//     return fetch(`${API_BASE_URL}/protected`, {
-//         method: 'GET',
-//         headers: {
-//             // Provide our auth token as credentials
-//             Authorization: `Bearer ${authToken}`
-//         }
-//     })
-//         .then(res => normalizeResponseErrors(res))
-//         .then(res => res.json())
-//         .then((data) => {
-//         dispatch(fetchProtectedDataSuccess(data.data))
-//         console.log(data);
-//         console.log(data.data)})
-//         .catch(err => {
-//             dispatch(fetchProtectedDataError(err));
-//         });
-// };
-
 export const fetchProtectedData = () => dispatch => {
   dispatch(fetchProtectedDataRequest());
   return fetch(
@@ -89,7 +69,7 @@ export const fetchAddItem = item => (dispatch, getState) => {
   dispatch({
     type: 'ADD_ITEM_TO_WISHLIST',
     item
-  })
+  });
   return fetch(`${API_BASE_URL}/users/${state.auth.currentUser.id}`, {
     method: 'PUT',
     headers: {
@@ -112,9 +92,7 @@ export const fetchUserList = () => (dispatch, getState) => {
 
   dispatch(fetchUserlistRequest());
   return fetch(
-    `https://cors-anywhere.herokuapp.com/http://api.walmartlabs.com/v1/items?ids=${
-      listItem
-    }&apiKey=btbth79qwypgtfubhamzjc4u&format=json`,
+    `https://cors-anywhere.herokuapp.com/http://api.walmartlabs.com/v1/items?ids=${listItem}&apiKey=btbth79qwypgtfubhamzjc4u&format=json`,
     { 'x-requested-with': 'xhr' }
   )
     .then(response => {

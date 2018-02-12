@@ -26,4 +26,4 @@ Heroku, Netlify, Git, GitHub
 
 *Additional Feature 
 Implement checkout feature 
-Implement more APIs
+
