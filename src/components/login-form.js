@@ -10,6 +10,10 @@ export class LoginForm extends React.Component {
     return this.props.dispatch(login(values.username, values.password));
   }
 
+  demologin(x, y) {
+    return this.props.dispatch(login(x, y));
+}
+
   render() {
     let error;
     if (this.props.error) {
@@ -44,6 +48,10 @@ export class LoginForm extends React.Component {
         <button disabled={this.props.pristine || this.props.submitting}>
           Log in
         </button>
+        <br></br>
+        <button onClick={()=>this.demologin('demo1', 'demo1')}>
+                    Demo-Login
+                </button>
       </form>
     );
   }
