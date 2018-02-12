@@ -16,7 +16,7 @@ nav li {
   font-size: 20px;
   border-radius: 20px;
   padding: 10px 10px;
-  background-color: rgb(230, 158, 34);
+  background-color: rgb(36, 104, 207);
   opacity: 0.9;
   box-shadow: 0px 2px 1px white inset, 0px -2px 8px white,
     0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
@@ -39,7 +39,7 @@ nav li {
     font-size: 20px;
     border-radius: 20px;
     padding: 10px 10px;
-    background-color: rgb(230, 158, 34);
+    background-color: rgb(36, 104, 207);
     opacity: 0.9;
     box-shadow: 0px 2px 1px white inset, 0px -2px 8px white,
       0px 2px 5px rgba(0, 0, 0, 0.1), 0px 8px 10px rgba(0, 0, 0, 0.1);
