@@ -28,7 +28,7 @@ export class TrendingList extends React.Component {
         <div className='loading' style={styles}>
           <ClipLoader
             color={'#0D8FA7'}
-            loading={this.props.loading} 
+            loading={this.props.loading}
           />
         </div>
       )
@@ -55,7 +55,6 @@ export class TrendingList extends React.Component {
     ));
 
     if (this.props.protectedData && trending.length === 0) {
-      console.log('length', trending.length);
     }
 
     // Only visible to logged in users

@@ -5,7 +5,6 @@ import { loadAuthToken } from './local-storage';
 import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
 import { setAuthToken } from './actions/auth';
-import { createLogger } from 'redux-logger';
 
 const store = createStore(
   combineReducers({
@@ -15,7 +14,7 @@ const store = createStore(
   }),
   undefined,
   compose(
-    applyMiddleware(thunk, createLogger()),
+    applyMiddleware(thunk),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 );

@@ -123,3 +123,7 @@ a {
 .zeroWishlistText {
   margin-top: 2.5em;
 }
+
+ul {
+  padding-left: 0;
+}
