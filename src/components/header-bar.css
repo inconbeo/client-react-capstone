@@ -12,7 +12,6 @@ h1 {
   left: 5px;
   right: 5px;
   background: #ececec;
-  border-radius: 15px;
   padding: 5px 10px;
   display: block;
   font-family: arial;
@@ -34,7 +33,6 @@ h1 {
     margin-top: -55px;
     margin-right: 10px;
     background: #ececec;
-    border-radius: 15px;
     padding: 5px 10px;
     display: block;
     font-family: arial;

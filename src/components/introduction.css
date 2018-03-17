@@ -14,18 +14,17 @@
     -webkit-transition: 0.5s;
     transition: 0.5s;
     font-size: 30px;
-    border-radius: 50px;
     margin-top: 30px;
   }
-  
+
   .start:hover {
     opacity: 0.7;
   }
-  
+
   .start:active {
     transform: translateY(4px);
   }
-  
+
   button:focus {
     outline: 0;
   }

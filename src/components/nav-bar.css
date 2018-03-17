@@ -9,12 +9,10 @@ nav li {
   text-align: center;
   list-style-type: none;
   display: inline-block;
-  border: 1px solid;
   margin-right: 15px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 20px;
-  border-radius: 20px;
   padding: 10px 10px;
   background-color: rgb(36, 104, 207);
   opacity: 0.9;
@@ -32,12 +30,10 @@ nav li {
     text-align: center;
     list-style-type: none;
     display: inline;
-    border: 1px solid;
     margin-right: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
       'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
-    border-radius: 20px;
     padding: 10px 10px;
     background-color: rgb(36, 104, 207);
     opacity: 0.9;
